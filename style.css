@@ -767,6 +767,15 @@ footer {
 
 }
 
+/* Twitter */
+
+.x-link:hover {
+
+    border-color:
+        rgba(0,0,0,.6);
+
+}
+
 
 /* DISCORD */
 
