@@ -1,0 +1,1060 @@
+:root {
+    --background: #050509;
+    --card: rgba(15, 15, 23, 0.78);
+    --border: rgba(255,255,255,0.08);
+    --text: #ffffff;
+    --muted: #a1a1aa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: var(--text);
+
+    background: var(--background);
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   FONDO
+========================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(139, 92, 246, .20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(0, 200, 255, .08),
+            transparent 30%
+        ),
+        #050509;
+}
+
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.container {
+    width: min(1100px, 100%);
+
+    margin: auto;
+
+    padding:
+        60px 25px
+        40px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+
+.logo {
+    width: 110px;
+    height: 110px;
+
+    margin: 0 auto 20px;
+
+    padding: 4px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #6366f1
+        );
+
+    box-shadow:
+        0 0 40px rgba(139,92,246,.35);
+}
+
+
+.logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+.header h1 {
+    font-size: 38px;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+}
+
+
+.header p {
+    margin-top: 10px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.members {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================
+   TARJETA
+========================= */
+
+.member-card {
+
+    position: relative;
+
+    padding: 30px 22px;
+
+    text-align: center;
+
+    border-radius: 22px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    backdrop-filter: blur(15px);
+
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+/* brillo */
+
+.member-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -100px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+    opacity: .08;
+
+    filter: blur(30px);
+
+    transition:
+        transform .4s ease,
+        opacity .4s ease;
+
+}
+
+
+.member-card:hover::before {
+
+    transform:
+        translateX(-50%)
+        scale(2);
+
+    opacity: .15;
+
+}
+
+
+.member-card:hover {
+
+    transform:
+        translateY(-10px)
+        scale(1.02);
+
+}
+
+
+/* =========================
+   AVATAR
+========================= */
+
+.avatar {
+
+    position: relative;
+
+    width: 100px;
+    height: 100px;
+
+    margin: 0 auto 18px;
+
+    padding: 3px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+    box-shadow:
+        0 0 25px currentColor;
+
+}
+
+
+.avatar img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+
+}
+
+
+/* =========================
+   NOMBRE
+========================= */
+
+.member-card h2 {
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+}
+
+
+.description {
+
+    min-height: 42px;
+
+    margin:
+        8px 0
+        20px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================
+   REDES
+========================= */
+
+.socials {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.social {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 9px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid rgba(255,255,255,.06);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+
+}
+
+
+.social:hover {
+
+    transform: translateX(5px);
+
+    background:
+        rgba(255,255,255,.12);
+
+}
+
+
+/* =========================
+   COLORES / EFECTOS
+========================= */
+
+.effect-purple {
+    color: #a855f7;
+}
+
+.effect-blue {
+    color: #3b82f6;
+}
+
+.effect-cyan {
+    color: #06b6d4;
+}
+
+.effect-green {
+    color: #22c55e;
+}
+
+.effect-red {
+    color: #ef4444;
+}
+
+.effect-yellow {
+    color: #eab308;
+}
+
+.effect-pink {
+    color: #ec4899;
+}
+
+.effect-orange {
+    color: #f97316;
+}
+
+.effect-lime {
+    color: #84cc16;
+}
+
+.effect-violet {
+    color: #8b5cf6;
+}
+
+.effect-white {
+    color: #e4e4e7;
+}
+
+.effect-gold {
+    color: #f59e0b;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    text-align: center;
+
+    margin-top: 45px;
+
+    color: #52525b;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+    .members {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media (max-width: 580px) {
+
+    .container {
+
+        padding:
+            40px 15px;
+
+    }
+
+    .header h1 {
+
+        font-size: 30px;
+
+    }
+
+    .members {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .member-card:hover {
+
+        transform:
+            translateY(-5px);
+
+    }
+
+}
+
+
+/* =========================
+   X / TWITTER
+========================= */
+
+.social.x:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* =========================
+   TARJETA NEXOSQUAD
+========================= */
+
+.community-card {
+
+    position: relative;
+
+    max-width: 700px;
+
+    margin: 0 auto 55px;
+
+    padding: 35px 30px;
+
+    text-align: center;
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(139, 92, 246, .14),
+            rgba(15, 15, 23, .9)
+        );
+
+    border:
+        1px solid rgba(139, 92, 246, .35);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 0 50px rgba(139, 92, 246, .12);
+
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+
+.community-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(139, 92, 246, .7);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, .4),
+        0 0 50px rgba(139, 92, 246, .2);
+}
+
+
+/* Brillo */
+
+.community-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    top: -180px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #8b5cf6;
+
+    opacity: .12;
+
+    filter: blur(60px);
+
+    pointer-events: none;
+}
+
+
+/* LOGO */
+
+.community-logo {
+
+    position: relative;
+
+    width: 115px;
+    height: 115px;
+
+    margin: 0 auto 18px;
+
+    padding: 4px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #6366f1
+        );
+
+    box-shadow:
+        0 0 35px rgba(139, 92, 246, .4);
+}
+
+
+.community-logo img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+}
+
+
+/* NOMBRE */
+
+.community-card h2 {
+
+    font-size: 27px;
+
+    font-weight: 900;
+
+}
+
+
+.community-description {
+
+    margin:
+        8px auto 25px;
+
+    color: #a1a1aa;
+
+    font-size: 14px;
+
+}
+
+
+/* REDES */
+
+.community-socials {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.community-link {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    min-height: 60px;
+
+    padding: 10px 15px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    color: white;
+
+    text-decoration: none;
+
+    text-align: left;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+}
+
+
+.community-link:hover {
+
+    transform: translateX(6px);
+
+    background:
+        rgba(255,255,255,.1);
+
+}
+
+
+/* ICONO */
+
+.community-icon {
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 13px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    font-size: 19px;
+
+}
+
+
+/* TEXTO */
+
+.community-link span:nth-child(2) {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+    flex: 1;
+
+}
+
+
+.community-link strong {
+
+    font-size: 14px;
+
+}
+
+
+.community-link small {
+
+    color: #a1a1aa;
+
+    font-size: 11px;
+
+}
+
+
+/* FLECHA */
+
+.community-arrow {
+
+    color: #71717a;
+
+    font-size: 19px;
+
+    transition:
+        transform .2s ease,
+        color .2s ease;
+}
+
+
+.community-link:hover .community-arrow {
+
+    transform: translateX(5px);
+
+    color: white;
+
+}
+
+/* Twitter */
+
+.x-link:hover {
+
+    border-color:
+        rgba(0,0,0,.6);
+
+}
+
+
+/* DISCORD */
+
+.discord-link:hover {
+
+    border-color:
+        rgba(88,101,242,.6);
+
+}
+
+
+/* TIKTOK */
+
+.tiktok-link:hover {
+
+    border-color:
+        rgba(255,255,255,.4);
+
+}
+
+
+/* YOUTUBE */
+
+.youtube-link:hover {
+
+    border-color:
+        rgba(255,0,0,.5);
+
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 580px) {
+
+    .community-card {
+
+        padding: 28px 18px;
+
+        margin-bottom: 40px;
+
+    }
+
+    .community-logo {
+
+        width: 95px;
+        height: 95px;
+
+    }
+
+}
+
+/* =========================
+   EFECTO 3D CON EL CURSOR
+========================= */
+
+.community-card {
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Brillo que sigue al cursor */
+
+.community-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle 180px at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.12),
+            transparent 65%
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.2s ease;
+
+}
+
+
+/* Activar brillo */
+
+.community-card:hover::after {
+    opacity: 1;
+}
+
+
+/* El contenido se separa ligeramente */
+
+.community-card > * {
+
+    position: relative;
+
+    z-index: 2;
+
+    transform: translateZ(20px);
+
+}
+
+
+/* Logo */
+
+.community-logo {
+
+    transition:
+        transform 0.15s ease;
+
+}
+
+
+/* Botones */
+
+.community-link {
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+
+}
+
+
+/* Al pasar por encima */
+
+.community-link:hover {
+
+    transform:
+        translateZ(25px)
+        translateX(6px);
+
+}
+
+
+/* Móvil: quitar efecto 3D */
+
+@media (max-width: 580px) {
+
+    .community-card {
+        transform: none !important;
+    }
+
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    background: rgba(5, 5, 9, 0.85);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+
+    z-index: 1000;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.nav-logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+header {
+    padding-top: 110px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #a1a1aa;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: #8b5cf6;
+
+    box-shadow: 0 0 10px #8b5cf6;
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: white;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+    
+    .navbar {
+        height: 60px;
+        padding: 0 18px;
+    }
+
+    .nav-logo span {
+        display: none;
+    }
+
+    .nav-logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+}
